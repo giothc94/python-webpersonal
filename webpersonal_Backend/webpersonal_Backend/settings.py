@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'app',
     'portafolio',
     'about',
+    'service_detail.apps.ServiceDetailConfig',
 ]
 
 MIDDLEWARE = [

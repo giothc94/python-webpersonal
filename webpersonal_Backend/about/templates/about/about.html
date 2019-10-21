@@ -19,16 +19,17 @@
 
     <!-- Contenido Principal -->
     <div class="container">
-      <div class="row">   
-        <div class="col-lg-3 col-md-4 offset-lg-1">
-          <img class="img-fluid avatar" src={% static 'app/img/avatar.jpg' %} alt="">
-        </div>
-        <div class="col-lg-7 col-md-8">
-          <h2 class="section-heading">Juan Pérez</h2>   
-          <p>Nacido en... lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit...</p>
-        </div>
-      </div>  
+          {% for about_ in about %}
+          <div class="row">   
+            <div class="col-lg-3 col-md-4 offset-lg-1">
+              <img class="img-fluid avatar" src={{about_.image.url}} alt="">
+            </div>
+            <div class="col-lg-7 col-md-8">
+                <h2 class="section-heading"> {{about_.title}} </h2>   
+                <p>{{about_.content}}</p>
+            </div>
+          </div>
+          {% endfor %}
     </div>
 
 {% endblock %}

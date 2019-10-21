@@ -26,7 +26,13 @@
 				<div class="col-lg-7 col-md-8">
 					<h2 class="section-heading title">{{project.title}}</h2>   
 				<p>{{project.content}}</p>
-				<p><a href="http://google.com">Más información</a></p>
+				{% load service_detail %}
+				{% get_service_detail_list as list %}
+                {% for details in list %}
+					<p>
+                    <a href={% url 'detail' details.id %} class="link">Más información</a>
+					</p>
+                {% endfor %}
 				</div>
 			</div>
 			{% endfor %}

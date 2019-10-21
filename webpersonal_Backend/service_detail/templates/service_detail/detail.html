@@ -1,0 +1,31 @@
+{% extends 'app/base.html' %}
+{% block content %}
+{% load static %}
+
+    <!-- Cabecera -->
+    <header class="masthead" style="background-image: url('{% static 'app/img/contact-bg.jpg' %}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Detalle de servicio</h1>
+              <span class="subheading">informate de los servicios prestados.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Contenido Principal -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p class="h1">{{detail.title}}</p>
+          <img src={{detail.image.url}} alt="logo">
+          <p>{{detail.content}}</p>
+          <br>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
